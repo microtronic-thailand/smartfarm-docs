@@ -49,6 +49,9 @@ nav:
       - User Guide:
           - คู่มือการใช้งาน (TH): user-guide/manual-th.md
           - User Manual (EN): user-guide/manual-en.md
+  - Admin Guide:
+      - คู่มือผู้ดูแลระบบ (TH): admin-guide/manual-th.md
+      - การสร้างธีมและส่วนขยาย: admin-guide/themes-extensions.md
   - Hardware Support: hardware/index.md
   - Hardware Guides:
       - ESP32 Setup: hardware/esp32-setup.md
@@ -65,4 +68,8 @@ nav:
   - Library:
       - Arduino Library: library/arduino.md
   - About:
+      - Quick Start: introduction.md
+      - Mobile Strategy: about/mobile-strategy.md
+      - Edge Hub Setup (TH): about/edge-hub-setup.md
+      - Edge Hub Setup (EN): about/edge-hub-setup-en.md
       - Deployment Flow: about/deployment.md
