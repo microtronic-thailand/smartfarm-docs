@@ -1,0 +1,68 @@
+site_name: Smart Farm IoT Platform Documentation
+site_url: https://gridsmicro.github.io/smartfarm-docs/
+site_description: Comprehensive guides and API reference for the Smart Farm IoT Platform.
+site_author: Grids Micro Team
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: emerald
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: emerald
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Welcome: index.md
+  - Getting Started:
+      - Introduction: introduction.md
+      - User Guide:
+          - คู่มือการใช้งาน (TH): user-guide/manual-th.md
+          - User Manual (EN): user-guide/manual-en.md
+  - Hardware Support: hardware/index.md
+  - Hardware Guides:
+      - ESP32 Setup: hardware/esp32-setup.md
+      - STM32 Guide: hardware/stm32-getting-started.md
+      - Power Solutions: hardware/power-solutions.md
+      - Water Management: hardware/water-management.md
+  - Project Examples:
+      - Environment Monitor: hardware/environment-monitor.md
+      - Smart Irrigation: hardware/smart-irrigation.md
+      - Off-Grid Power: hardware/offgrid-power.md
+  - AI & Analytics:
+      - Crop Analysis: hardware/ai-crop-analysis.md
+  - API Reference: api/index.md
+  - Library:
+      - Arduino Library: library/arduino.md
+  - About:
+      - Deployment Flow: about/deployment.md
