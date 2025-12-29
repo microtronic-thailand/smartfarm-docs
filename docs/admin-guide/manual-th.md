@@ -6,10 +6,15 @@
 
 ## 🏗️ โครงสร้างระบบ (System Overview)
 
-แพลตฟอร์มของเราประกอบด้วย 3 เลเยอร์หลัก:
-1.  **Cloud Layer (Next.js + Supabase)**: จัดการข้อมูลรวมศูนย์, การยืนยันตัวตน, และการแสดงผลผ่านเว็บ
-2.  **Edge Layer (Raspberry Pi/PC)**: ทำหน้าที่เป็น Local Gateway (MQTT Broker + Logic Engine)
+แพลตฟอร์มของเราประกอบด้วย 3 เลเยอร์หลักที่รองรับระบบ Hybrid:
+1.  **Cloud Layer (Next.js + Supabase)**: จัดการข้อมูลรวมศูนย์และการยืนยันตัวตน
+2.  **Broker Layer (EMQX Cloud / Local)**: ตัวกลางรับส่งข้อมูล (รองรับทั้งออนไลน์และออฟไลน์)
 3.  **Device Layer (ESP32/Hardware)**: เซนเซอร์และอุปกรณ์ควบคุมหน้างาน
+
+### 🔄 ระบบ Hybrid Mode (Failover)
+แพลตฟอร์มรองรับการทำงาน 2 โหมดหลัก:
+-   **Cloud Mode**: ข้อมูลวิ่งผ่าน EMQX Cloud และซิงค์ลง Supabase (ดูได้ทั่วโลก)
+-   **Edge Hub Mode**: ข้อมูลวิ่งในวงแลนเท่านั้น (เน้นความเสถียรและความเป็นส่วนตัวสูงสุด)
 
 ---
 
@@ -30,17 +35,23 @@
 ## 📚 ข้อมูลอ้างอิงทางเทคนิค (Technical Reference)
 
 ### พอร์ตที่สำคัญ (Important Ports)
-| พอร์ต | โปรโตคอล | คำอธิบาย |
-| :--- | :--- | :--- |
-| 1883 | MQTT | สำหรับการรับส่งข้อมูลภายใน (Local Network) |
-| 8883 | MQTTS | สำหรับการซิงค์ข้อมูลขึ้น Cloud (Secure) |
-| 5432 | Postgres | การเชื่อมต่อฐานข้อมูล (Supabase) |
-| 80/443 | HTTP/S | เว็บ Dashboard และ API |
+| พอร์ต   | โปรโตคอล | คำอธิบาย                               |
+| :----- | :------- | :----------------------------------- |
+| 1883   | MQTT     | สำหรับการรับส่งข้อมูลภายใน (Local Network) |
+| 8883   | MQTTS    | สำหรับการซิงค์ข้อมูลขึ้น Cloud (Secure)      |
+| 5432   | Postgres | การเชื่อมต่อฐานข้อมูล (Supabase)          |
+| 80/443 | HTTP/S   | เว็บ Dashboard และ API                |
 
 ### หัวข้อ MQTT (Topic Structure)
-- `farm/telemetry/[device_id]`: ข้อมูลเซนเซอร์ (Publish)
-- `farm/status/[device_id]`: สถานะเชื่อมต่อ (LWT)
-- `farm/command/[device_id]`: คำสั่งจากระบบ (Subscribe)
+- `telemetry/[device_id]/[sensor_type]`: ข้อมูลเซนเซอร์ (Publish) ตัวอย่าง: `telemetry/DEV-001/temperature`
+- `status/[device_id]`: สถานะเชื่อมต่อ (LWT)
+- `commands/[device_id]`: คำสั่งจากระบบ (Subscribe)
+
+### ⚙️ การตั้งค่าสภาพแวดล้อม (.env.local)
+ตัวแปรสำคัญที่แอดมินต้องดูแล:
+- `NEXT_PUBLIC_OPERATION_MODE`: ตั้งเป็น `cloud` สำหรับเซิร์ฟเวอร์หลัก หรือ `local` สำหรับ Edge Hub
+- `NEXT_PUBLIC_MQTT_BROKER_URL`: URL ของ EMQX Cloud (เริ่มต้นด้วย `wss://`)
+- `NEXT_PUBLIC_MQTT_USERNAME/PASSWORD`: รหัสผ่านสำหรับเชื่อมต่อ MQTT
 
 ---
 

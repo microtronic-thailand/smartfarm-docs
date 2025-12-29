@@ -17,6 +17,12 @@ Welcome to the official documentation for the **Smart Farm IoT Platform**. This 
 - Developers can refer to the **[API Reference](api/index.md)**.
 - To connect your devices, see the **[Arduino Library](library/arduino.md)** guide.
 
+## 🔗 Project Repositories
+- **[Main Dashboard](https://github.com/GridsMicro/micro-iot-platform)**
+- **[Arduino Library](https://github.com/microtronic-thailand/smartfarm-iot-library)**
+- **[Mobile App](https://github.com/microtronic-thailand/smartfarm-mobile)**
+- **[System Documentation](https://github.com/microtronic-thailand/smartfarm-docs)**
+
 ---
 
 Built with ❤️ by the Grids Micro Team.
