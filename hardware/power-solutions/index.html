@@ -1,0 +1,2514 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive guides and API reference for the Smart Farm IoT Platform.">
+      
+      
+        <meta name="author" content="Grids Micro Team">
+      
+      
+        <link rel="canonical" href="https://gridsmicro.github.io/smartfarm-docs/hardware/power-solutions/">
+      
+      
+        <link rel="prev" href="../stm32-getting-started/">
+      
+      
+        <link rel="next" href="../water-management/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Power Solutions - Smart Farm IoT Platform Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="emerald" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#off-grid-power-solutions-for-smart-farm-iot-devices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Smart Farm IoT Platform Documentation" class="md-header__button md-logo" aria-label="Smart Farm IoT Platform Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Smart Farm IoT Platform Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Power Solutions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="emerald" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="emerald" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../introduction/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin-guide/manual-th/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Hardware Support
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../esp32-setup/" class="md-tabs__link">
+          
+  
+  
+  Hardware Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../environment-monitor/" class="md-tabs__link">
+          
+  
+  
+  Project Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-crop-analysis/" class="md-tabs__link">
+          
+  
+  
+  AI & Analytics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../library/arduino/" class="md-tabs__link">
+          
+  
+  
+  Library
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../introduction/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Smart Farm IoT Platform Documentation" class="md-nav__button md-logo" aria-label="Smart Farm IoT Platform Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Smart Farm IoT Platform Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/manual-th/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    คู่มือการใช้งาน (TH)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/manual-en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Manual (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-guide/manual-th/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    คู่มือผู้ดูแลระบบ (TH)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-guide/themes-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    การสร้างธีมและส่วนขยาย
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esp32-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stm32-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power Solutions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-renewable-energy-for-smart-farm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Renewable Energy for Smart Farm?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-consumption-of-iot-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Consumption of IoT Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Consumption of IoT Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-smart-farm-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Smart Farm Node:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-energy-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Energy Consumption:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-solar-power-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 1: Solar Power System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Solar Power System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-solar-setup-single-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌞 Small Solar Setup (Single Node)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiring Diagram:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-wind-power-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 2: Wind Power System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Wind Power System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-wind-turbine-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💨 Small Wind Turbine Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-wind-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Wind Power?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-3-hybrid-solar-wind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 3: Hybrid Solar + Wind
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 3: Hybrid Solar + Wind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-of-both-worlds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌞💨 Best of Both Worlds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#battery-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery Selection Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Battery Selection Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-18650-li-ion-best-for-small-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 18650 Li-ion (Best for small systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lead-acid-budget-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lead-Acid (Budget option)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lifepo4-best-for-long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. LiFePO4 (Best for long-term)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-management-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Management Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Management Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-deep-sleep-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Deep Sleep Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-power-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Power System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Power System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-voltage-monitoring-to-your-iot-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Voltage Monitoring to Your IoT Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solar-panel-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solar Panel Placement:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need Help?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment-monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart-irrigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smart Irrigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offgrid-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Off-Grid Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI & Analytics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI & Analytics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-crop-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crop Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Library
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Library
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library/arduino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/mobile-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/edge-hub-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edge Hub Setup (TH)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/edge-hub-setup-en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edge Hub Setup (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-renewable-energy-for-smart-farm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Renewable Energy for Smart Farm?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-consumption-of-iot-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Consumption of IoT Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Consumption of IoT Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-smart-farm-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Smart Farm Node:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-energy-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Energy Consumption:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-solar-power-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 1: Solar Power System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Solar Power System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-solar-setup-single-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌞 Small Solar Setup (Single Node)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiring Diagram:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-wind-power-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 2: Wind Power System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Wind Power System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-wind-turbine-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💨 Small Wind Turbine Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-wind-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Wind Power?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-3-hybrid-solar-wind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 3: Hybrid Solar + Wind
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 3: Hybrid Solar + Wind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-of-both-worlds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌞💨 Best of Both Worlds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#battery-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery Selection Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Battery Selection Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-18650-li-ion-best-for-small-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 18650 Li-ion (Best for small systems)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lead-acid-budget-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lead-Acid (Budget option)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lifepo4-best-for-long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. LiFePO4 (Best for long-term)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-management-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Management Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Management Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-deep-sleep-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Deep Sleep Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-power-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Power System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring Power System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-voltage-monitoring-to-your-iot-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Voltage Monitoring to Your IoT Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solar-panel-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solar Panel Placement:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need Help?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="off-grid-power-solutions-for-smart-farm-iot-devices">Off-Grid Power Solutions for Smart Farm IoT Devices<a class="headerlink" href="#off-grid-power-solutions-for-smart-farm-iot-devices" title="Permanent link">&para;</a></h1>
+<h2 id="why-renewable-energy-for-smart-farm">Why Renewable Energy for Smart Farm?<a class="headerlink" href="#why-renewable-energy-for-smart-farm" title="Permanent link">&para;</a></h2>
+<p>เกษตรกรส่วนใหญ่มีพื้นที่ฟาร์มห่างจากแหล่งไฟฟ้า การใช้พลังงานทดแทนจึงเป็นทางเลือกที่ดีที่สุด:</p>
+<p>✅ <strong>ประหยัดค่าไฟ</strong> - ไม่ต้องจ่ายค่าไฟรายเดือน<br />
+✅ <strong>ติดตั้งได้ทุกที่</strong> - ไม่ต้องรอการไฟฟ้าเข้าพื้นที่<br />
+✅ <strong>เป็นมิตรกับสิ่งแวดล้อม</strong> - ลดการปล่อย CO₂<br />
+✅ <strong>ทำงานได้ 24/7</strong> - ใช้แบตเตอรี่สำรอง  </p>
+<hr />
+<h2 id="power-consumption-of-iot-devices">Power Consumption of IoT Devices<a class="headerlink" href="#power-consumption-of-iot-devices" title="Permanent link">&para;</a></h2>
+<h3 id="typical-smart-farm-node">Typical Smart Farm Node:<a class="headerlink" href="#typical-smart-farm-node" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ESP32</strong>: 80-160 mA (Active), 5-10 mA (Deep Sleep)</li>
+<li><strong>STM32</strong>: 30-50 mA (Active), 1-2 mA (Sleep)</li>
+<li><strong>DHT22 Sensor</strong>: 1-1.5 mA</li>
+<li><strong>Relay Module</strong>: 50-70 mA (when ON)</li>
+<li><strong>Total Average</strong>: ~100-200 mA @ 5V = 0.5-1W</li>
+</ul>
+<h3 id="daily-energy-consumption">Daily Energy Consumption:<a class="headerlink" href="#daily-energy-consumption" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Scenario 1: Always Active
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>100 mA × 24 hours = 2.4 Ah/day × 5V = 12 Wh/day
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Scenario 2: Deep Sleep (Wake every 5 min)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Average 20 mA × 24 hours = 0.48 Ah/day × 5V = 2.4 Wh/day
+</code></pre></div>
+<p><strong>Recommendation</strong>: Use Deep Sleep mode to save 80% energy!</p>
+<hr />
+<h2 id="solution-1-solar-power-system">Solution 1: Solar Power System<a class="headerlink" href="#solution-1-solar-power-system" title="Permanent link">&para;</a></h2>
+<h3 id="small-solar-setup-single-node">🌞 Small Solar Setup (Single Node)<a class="headerlink" href="#small-solar-setup-single-node" title="Permanent link">&para;</a></h3>
+<p><strong>Components:</strong>
+1. <strong>Solar Panel</strong>: 10W (6V) - ~฿200-300
+2. <strong>Charge Controller</strong>: TP4056 or CN3791 - ~฿30-50
+3. <strong>Battery</strong>: 18650 Li-ion 3.7V 3000mAh (2-3 cells) - ~฿100-150
+4. <strong>DC-DC Converter</strong>: LM2596 (Step-down to 5V) - ~฿30
+5. <strong>Wires &amp; Connectors</strong> - ~฿50</p>
+<p><strong>Total Cost</strong>: ~฿400-600 (~$12-18 USD)</p>
+<h3 id="wiring-diagram">Wiring Diagram:<a class="headerlink" href="#wiring-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Solar Panel (6V 10W)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    |
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    v
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>[Charge Controller] ---&gt; Battery (3.7V 6000mAh)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    |                        |
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    +------------------------+
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                |
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                v
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        [DC-DC Converter 5V]
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>                |
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                v
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            ESP32/STM32
+</code></pre></div>
+<hr />
+<h2 id="solution-2-wind-power-system">Solution 2: Wind Power System<a class="headerlink" href="#solution-2-wind-power-system" title="Permanent link">&para;</a></h2>
+<h3 id="small-wind-turbine-setup">💨 Small Wind Turbine Setup<a class="headerlink" href="#small-wind-turbine-setup" title="Permanent link">&para;</a></h3>
+<p><strong>Components:</strong>
+1. <strong>Mini Wind Turbine</strong>: 100W 12V - ~฿1,500-2,500
+2. <strong>Charge Controller</strong>: PWM 12V 10A - ~฿200-300
+3. <strong>Battery</strong>: 12V 7Ah Lead-Acid or LiFePO4 - ~฿400-800
+4. <strong>DC-DC Converter</strong>: Buck converter 12V to 5V - ~฿50</p>
+<p><strong>Total Cost</strong>: ~฿2,200-3,700 (~$65-110 USD)</p>
+<h3 id="when-to-use-wind-power">When to Use Wind Power?<a class="headerlink" href="#when-to-use-wind-power" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Open areas</strong> with consistent wind (&gt;3 m/s average)<br />
+✅ <strong>Coastal regions</strong> or hilltops<br />
+✅ <strong>Supplement to solar</strong> during rainy season<br />
+⚠️ <strong>Not recommended</strong> for enclosed farms or low-wind areas  </p>
+<hr />
+<h2 id="solution-3-hybrid-solar-wind">Solution 3: Hybrid Solar + Wind<a class="headerlink" href="#solution-3-hybrid-solar-wind" title="Permanent link">&para;</a></h2>
+<h3 id="best-of-both-worlds">🌞💨 Best of Both Worlds<a class="headerlink" href="#best-of-both-worlds" title="Permanent link">&para;</a></h3>
+<p><strong>Why Hybrid?</strong>
+- Solar works during day
+- Wind works during night/rainy season
+- Maximum uptime (99%+)</p>
+<p><strong>Components:</strong>
+1. Solar Panel: 20W 12V - ~฿400
+2. Wind Turbine: 100W 12V - ~฿2,000
+3. Hybrid Charge Controller: 12V 20A - ~฿500
+4. Battery: 12V 12Ah LiFePO4 - ~฿1,200
+5. DC-DC Converter: 12V to 5V - ~฿50</p>
+<p><strong>Total Cost</strong>: ~฿4,200 (~$125 USD)</p>
+<hr />
+<h2 id="battery-selection-guide">Battery Selection Guide<a class="headerlink" href="#battery-selection-guide" title="Permanent link">&para;</a></h2>
+<h3 id="1-18650-li-ion-best-for-small-systems">1. <strong>18650 Li-ion</strong> (Best for small systems)<a class="headerlink" href="#1-18650-li-ion-best-for-small-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Voltage</strong>: 3.7V</li>
+<li><strong>Capacity</strong>: 2000-3500 mAh</li>
+<li><strong>Pros</strong>: Cheap, high energy density</li>
+<li><strong>Cons</strong>: Needs protection circuit</li>
+</ul>
+<h3 id="2-lead-acid-budget-option">2. <strong>Lead-Acid</strong> (Budget option)<a class="headerlink" href="#2-lead-acid-budget-option" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Voltage</strong>: 12V</li>
+<li><strong>Capacity</strong>: 7-20 Ah</li>
+<li><strong>Pros</strong>: Very cheap, robust</li>
+<li><strong>Cons</strong>: Heavy, lower lifespan</li>
+</ul>
+<h3 id="3-lifepo4-best-for-long-term">3. <strong>LiFePO4</strong> (Best for long-term)<a class="headerlink" href="#3-lifepo4-best-for-long-term" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Voltage</strong>: 12.8V</li>
+<li><strong>Capacity</strong>: 7-20 Ah</li>
+<li><strong>Pros</strong>: Long life (2000+ cycles), safe</li>
+<li><strong>Cons</strong>: More expensive</li>
+</ul>
+<p><strong>Recommendation</strong>: 
+- <strong>Small farm (1-2 nodes)</strong>: 18650 Li-ion
+- <strong>Medium farm (3-5 nodes)</strong>: 12V 12Ah LiFePO4
+- <strong>Large farm (10+ nodes)</strong>: 12V 20Ah LiFePO4</p>
+<hr />
+<h2 id="power-management-tips">Power Management Tips<a class="headerlink" href="#power-management-tips" title="Permanent link">&para;</a></h2>
+<h3 id="1-use-deep-sleep-mode">1. <strong>Use Deep Sleep Mode</strong><a class="headerlink" href="#1-use-deep-sleep-mode" title="Permanent link">&para;</a></h3>
+<p><strong>ESP32 Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;esp_sleep.h&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">// Read sensors</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="c1">// Send data via MQTT</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c1">// Sleep for 5 minutes</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="n">esp_sleep_enable_timer_wakeup</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000000</span><span class="p">);</span><span class="w"> </span><span class="c1">// microseconds</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="n">esp_deep_sleep_start</span><span class="p">();</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Power Savings</strong>: 80 mA → 5 mA = <strong>94% reduction!</strong></p>
+<hr />
+<h2 id="monitoring-power-system">Monitoring Power System<a class="headerlink" href="#monitoring-power-system" title="Permanent link">&para;</a></h2>
+<h3 id="add-voltage-monitoring-to-your-iot-node">Add Voltage Monitoring to Your IoT Node<a class="headerlink" href="#add-voltage-monitoring-to-your-iot-node" title="Permanent link">&para;</a></h3>
+<p><strong>Circuit:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Battery (+) ---[10kΩ]---+---[10kΩ]--- GND
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                        |
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                     ADC Pin
+</code></pre></div></p>
+<p><strong>Code (ESP32):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">readBatteryVoltage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="mi">34</span><span class="p">);</span><span class="w"> </span><span class="c1">// ADC pin</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">voltage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">raw</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">4095.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Voltage divider ratio</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">voltage</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">batteryVoltage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readBatteryVoltage</span><span class="p">();</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">batteryVoltage</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3.3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;WARNING: Low battery!&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="c1">// Send alert via MQTT</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="c1">// Send battery status to dashboard</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="n">sendMQTT</span><span class="p">(</span><span class="s">&quot;battery_voltage&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">batteryVoltage</span><span class="p">);</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="installation-tips">Installation Tips<a class="headerlink" href="#installation-tips" title="Permanent link">&para;</a></h2>
+<h3 id="solar-panel-placement">Solar Panel Placement:<a class="headerlink" href="#solar-panel-placement" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Face South</strong> (in Northern Hemisphere) or <strong>Face North</strong> (in Southern Hemisphere)</li>
+<li><strong>Tilt angle</strong> = Your latitude (e.g., Bangkok ~13°)</li>
+<li><strong>No shadows</strong> from 10 AM - 2 PM</li>
+<li><strong>Clean regularly</strong> (dust reduces efficiency by 20-30%)</li>
+</ol>
+<hr />
+<h2 id="cost-comparison">Cost Comparison<a class="headerlink" href="#cost-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Solution</th>
+<th>Initial Cost</th>
+<th>Monthly Cost</th>
+<th>Uptime</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grid Power</strong></td>
+<td>฿500-1,000</td>
+<td>฿100-300</td>
+<td>95%</td>
+<td>Near power lines</td>
+</tr>
+<tr>
+<td><strong>Solar Only</strong></td>
+<td>฿400-600</td>
+<td>฿0</td>
+<td>85-90%</td>
+<td>Sunny areas</td>
+</tr>
+<tr>
+<td><strong>Wind Only</strong></td>
+<td>฿2,200-3,700</td>
+<td>฿0</td>
+<td>70-80%</td>
+<td>Windy areas</td>
+</tr>
+<tr>
+<td><strong>Hybrid</strong></td>
+<td>฿4,200+</td>
+<td>฿0</td>
+<td>95-99%</td>
+<td>Remote farms</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="need-help">Need Help?<a class="headerlink" href="#need-help" title="Permanent link">&para;</a></h2>
+<p>If you have questions about power systems for your Smart Farm, contact us!</p>
+<p><strong>LINE ID</strong>: @smartfarm</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
