@@ -1,35 +1,38 @@
-# Hardware Support
+# 🛠️ แนะนำฮาร์ดแวร์ (Hardware Guides)
 
-The Smart Farm IoT Platform supports a wide range of microcontrollers and sensors. We prioritize low-cost, high-reliability components that are easy to find and assemble.
+โครงการ Smart Farm & Smart Home ของเราถูกออกแบบมาให้มอดูลาร์ (Modular) โดยเริ่มจากโปรเจกต์ง่ายๆ แยกตามการใช้งาน ไปจนถึงระดับมืออาชีพที่รวบรวมทุกฟังก์ชันไว้ด้วยกัน
 
-## Supported Microcontrollers
+---
 
-We currently provide official support and guides for the following platforms:
+## 🌱 โครงการเริ่มต้นการเกษตร (Smart Farm Starter)
+เน้นการทดสอบเซนเซอร์ทีละจุด เพื่อเรียนรู้การส่งค่าและการทำงานพื้นฐาน:
+- [Soil Moisture Node](starter-farm-soil.md) - วัดความชื้นในดิน (Basic)
+- [Air Quality Monitor](starter-farm-air.md) - ตรวจวัดคุณภาพอากาศและก๊าซพิษ
+- [Water Level Management](starter-farm-water.md) - ตรววัดระดับน้ำในถังและควบคุมปั๊ม
 
-- **ESP32**: The primary choice for most nodes. Built-in WiFi/Bluetooth and plenty of GPIOs.
-- **ESP8266**: A cost-effective alternative for simpler nodes.
-- **STM32**: Industrial-grade microcontrollers for more complex or ultra-low-power applications.
+---
 
-## Sensor Integration
+## 🏠 โครงการเริ่มต้นบ้านอัจฉริยะ (Smart Home Starter)
+เปลี่ยนบ้านธรรมดาให้เป็นบ้านที่ควบคุมได้ผ่าน Cloud:
+- [Climate Control](starter-home-climate.md) - มอนิเตอร์อุณหภูมิและความชื้น พร้อมสั่งเปิด/ปิดไฟ
+- [Security & Intrusion](starter-home-security.md) - ระบบเตือนการเคลื่อนไหวและการเปิดประตู
 
-Our `SmartFarmSensors` library supports:
+---
 
-- **Environment**: DHT11, DHT22, BME280 (Temperature/Humidity).
-- **Soil**: Capacitive and Resistive Soil Moisture sensors.
-- **Water**: TDS, pH, and Water Level sensors.
-- **Power**: PZEM-004T, INA219 (Voltage/Current).
-- **Light**: BH1750, LDR.
+## ⌚ สุขภาพอัจฉริยะ (Smart Health)
+- [Grids Life-Node (Wearable)](life-node-v1.md) - อุปกรณ์สวมใส่เพื่อวิเคราะห์สุขภาพด้วย AI Doctor
 
-## Navigation
+---
 
-- [ESP32 Setup Guide](esp32-setup.md)
-- [STM32 Getting Started](stm32-getting-started.md)
-- [Power Solutions (Solar/Wind)](power-solutions.md)
-- [Water Management Systems](water-management.md)
-- [AI Crop Analysis](ai-crop-analysis.md)
+## ⚡ สำหรับระดับมืออาชีพ (Advanced Modules)
+การรวมหลายฟังก์ชันไว้ในฮาร์ดแวร์ชุดเดียวเพื่อการใช้งานจริง:
+- [📦 Multi-Sensor Mini Hub](starter-multi-sensor.md) - โมดูลพื้นฐานที่รวมหลายเซนเซอร์และมีหน้าจอ OLED
+- [👑 Grids Master Hub (Pro)](pro-master-hub.md) - ระบบควบคุมรวมศูนย์ประสิทธิภาพสูง (High Performance Edge Gateway)
+- [📡 Edge Hub Setup](esp32-emqx-cloud.md) - การเชื่อมต่อและสถาปัตยกรรมข้อมูลขั้นสูง
 
-## Step-by-Step Projects
+---
 
-- [Environment Monitoring](environment-monitor.md)
-- [Smart Irrigation System](smart-irrigation.md)
-- [Off-Grid Power Monitoring](offgrid-power.md)
+## 🔌 คู่มือการตั้งค่า (Setup Guides)
+- [ESP32 Configuration](esp32-setup.md)
+- [STM32 Support](stm32-getting-started.md)
+- [Power & Off-Grid Solutions](offgrid-power.md)

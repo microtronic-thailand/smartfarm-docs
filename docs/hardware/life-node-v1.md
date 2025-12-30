@@ -61,6 +61,23 @@ void loop() {
 
 ---
 
+## 📦 MQTT Payload Structure
+เมื่ออุปกรณ์เชื่อมต่อสำเร็จ ให้ส่งข้อมูลมาที่ Topic: `telemetry/[device_id]/health` 
+โดยใช้รูปแบบ JSON ดังนี้ เพื่อให้ระบบ AI และ Dashboard นำไปแสดงผลได้ทันที:
+
+```json
+{
+  "heartRate": 75,
+  "spo2": 98,
+  "temp": 36.6,
+  "movement": 120, 
+  "isSitting": true,
+  "timestamp": "2025-12-30T03:30:00Z"
+}
+```
+
+---
+
 ## 🚑 หมายเหตุสำหรับการทดสอบ AI
 ในรูปที่คุณส่งมาล่าสุด หมอตอบว่า **"ขออภัย หมอไม่สามารถวิเคราะห์ได้"** สาเหตุหลักคือ:
 1.  **API Key**: คุณยังไม่ได้เปลี่ยน `GEMINI_API_KEY` ในไฟล์ `.env.local` ครับ (ต้องเอาจาก Google AI Studio มาใส่)
